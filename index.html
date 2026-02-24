@@ -1,37 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>gbSTEM MadLibs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff5733;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    #story {
+      margin-top: 30px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .bold {
+      font-weight: bold;
+      color: #d62b2b;
+    }
+  </style>
+</head>
+<body>
 
-const form = document.getElementById("madLibsForm");
-const storyDiv = document.getElementById("story");
+  <h2>✨ gbSTEM MadLibs ✨</h2>
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
+  <form id="madLibsForm">
+    <label>Adjective:</label>
+    <input type="text" id="adj1" required>
 
-  const adj1 = document.getElementById("adj1").value;
-  const nationality = document.getElementById("nationality").value;
-  const person = document.getElementById("person").value;
-  const noun1 = document.getElementById("noun1").value;
-  const adj2 = document.getElementById("adj2").value;
-  const noun2 = document.getElementById("noun2").value;
-  const food1 = document.getElementById("food1").value;
-  const adj3 = document.getElementById("adj3").value;
-  const food2 = document.getElementById("food2").value;
-  const noun3 = document.getElementById("noun3").value;
-  const num1 = document.getElementById("num1").value;
-  const shape = document.getElementById("shape").value;
-  const food3 = document.getElementById("food3").value;
-  const food4 = document.getElementById("food4").value;
+    <label>Nationality:</label>
+    <input type="text" id="nationality" required>
 
-  const story = `
-    Pizza was invented by an <span class="bold">${adj1}</span> 
-    <span class="bold">${nationality}</span> chef named <span class="bold">${person}</span>. 
-    To make pizza, you take a lump of <span class="bold">${noun1}</span> and make a thin, round, 
-    <span class="bold">${adj2}</span> <span class="bold">${noun2}</span>. Then you cover it with 
-    <span class="bold">${food1}</span> sauce, <span class="bold">${adj3}</span> cheese, 
-    and <span class="bold">${food2}</span>. Next, you place it in a very hot 
-    <span class="bold">${noun3}</span>. When it is done, cut it into 
-    <span class="bold">${num1}</span> <span class="bold">${shape}</span>. 
-    Some kids like <span class="bold">${food3}</span> pizza the most, 
-    but my favorite is <span class="bold">${food4}</span> pizza.
-  `;
+    <label>Person's Name:</label>
+    <input type="text" id="person" required>
 
-  storyDiv.innerHTML = story;
-});
+    <label>Noun:</label>
+    <input type="text" id="noun1" required>
+
+    <label>Adjective:</label>
+    <input type="text" id="adj2" required>
+
+    <label>Noun:</label>
+    <input type="text" id="noun2" required>
+
+    <label>Food:</label>
+    <input type="text" id="food1" required>
+
+    <label>Adjective:</label>
+    <input type="text" id="adj3" required>
+
+    <label>Food:</label>
+    <input type="text" id="food2" required>
+
+    <label>Noun:</label>
+    <input type="text" id="noun3" required>
+
+    <label>Number:</label>
+    <input type="number" id="num1" required>
+
+    <label>Plural Shape:</label>
+    <input type="text" id="shape" required>
+
+    <label>Food:</label>
+    <input type="text" id="food3" required>
+
+    <label>Food:</label>
+    <input type="text" id="food4" required>
+
+    <button type="submit">Make My Story!</button>
+  </form>
+
+  <div id="story"></div>
+
+  <script>
+    const form = document.getElementById("madLibsForm");
+    const storyDiv = document.getElementById("story");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const adj1 = document.getElementById("adj1").value;
+      const nationality = document.getElementById("nationality").value;
+      const person = document.getElementById("person").value;
+      const noun1 = document.getElementById("noun1").value;
+      const adj2 = document.getElementById("adj2").value;
+      const noun2 = document.getElementById("noun2").value;
+      const food1 = document.getElementById("food1").value;
+      const adj3 = document.getElementById("adj3").value;
+      const food2 = document.getElementById("food2").value;
+      const noun3 = document.getElementById("noun3").value;
+      const num1 = document.getElementById("num1").value;
+      const shape = document.getElementById("shape").value;
+      const food3 = document.getElementById("food3").value;
+      const food4 = document.getElementById("food4").value;
+
+      const story = `
+        Pizza was invented by an <span class="bold">${adj1}</span> 
+        <span class="bold">${nationality}</span> chef named <span class="bold">${person}</span>. 
+        To make pizza, you take a lump of <span class="bold">${noun1}</span> and make a thin, round, 
+        <span class="bold">${adj2}</span> <span class="bold">${noun2}</span>. Then you cover it with 
+        <span class="bold">${food1}</span> sauce, <span class="bold">${adj3}</span> cheese, 
+        and <span class="bold">${food2}</span>. Next, you place it in a very hot 
+        <span class="bold">${noun3}</span>. When it is done, cut it into 
+        <span class="bold">${num1}</span> <span class="bold">${shape}</span>. 
+        Some kids like <span class="bold">${food3}</span> pizza the most, 
+        but my favorite is <span class="bold">${food4}</span> pizza.
+      `;
+
+      storyDiv.innerHTML = story;
+    });
+  </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"e3c1c9af36de41759418005494a48906","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
