@@ -1,0 +1,37 @@
+
+const form = document.getElementById("madLibsForm");
+const storyDiv = document.getElementById("story");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const adj1 = document.getElementById("adj1").value;
+  const nationality = document.getElementById("nationality").value;
+  const person = document.getElementById("person").value;
+  const noun1 = document.getElementById("noun1").value;
+  const adj2 = document.getElementById("adj2").value;
+  const noun2 = document.getElementById("noun2").value;
+  const food1 = document.getElementById("food1").value;
+  const adj3 = document.getElementById("adj3").value;
+  const food2 = document.getElementById("food2").value;
+  const noun3 = document.getElementById("noun3").value;
+  const num1 = document.getElementById("num1").value;
+  const shape = document.getElementById("shape").value;
+  const food3 = document.getElementById("food3").value;
+  const food4 = document.getElementById("food4").value;
+
+  const story = `
+    Pizza was invented by an <span class="bold">${adj1}</span> 
+    <span class="bold">${nationality}</span> chef named <span class="bold">${person}</span>. 
+    To make pizza, you take a lump of <span class="bold">${noun1}</span> and make a thin, round, 
+    <span class="bold">${adj2}</span> <span class="bold">${noun2}</span>. Then you cover it with 
+    <span class="bold">${food1}</span> sauce, <span class="bold">${adj3}</span> cheese, 
+    and <span class="bold">${food2}</span>. Next, you place it in a very hot 
+    <span class="bold">${noun3}</span>. When it is done, cut it into 
+    <span class="bold">${num1}</span> <span class="bold">${shape}</span>. 
+    Some kids like <span class="bold">${food3}</span> pizza the most, 
+    but my favorite is <span class="bold">${food4}</span> pizza.
+  `;
+
+  storyDiv.innerHTML = story;
+});
